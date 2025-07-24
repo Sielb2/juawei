@@ -1,5 +1,5 @@
 section .data
-        link db "discord.gg/claneu", 10
+        link db "dsc.gg/claneu", 10
 
 section .text
         global _start

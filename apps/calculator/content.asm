@@ -52,6 +52,11 @@ exit:
         mov     rax, 60
         xor     rdi, rdi
         syscall
+print:
+        mov     rax, 1
+        mov     rdi, 1
+        syscall
+        ret
 add:
         mov     r10, r8
         add     r10, r9
@@ -59,31 +64,21 @@ add:
         pop     r9
         add     r10, 48
         mov     byte [jfkaws], r10b
-        mov     rax, 1
-        mov     rdi, 1
         mov     rsi, r8
         mov     rdx, 2
-        syscall
-        mov     rax, 1
-        mov     rdi, 1
+        call    print
         mov     rsi, p
         mov     rdx, 1
-        syscall
-        mov     rax, 1
-        mov     rdi, 1
+        call    print
         mov     rsi, r9
         mov     rdx, 1
-        syscall
-        mov     rax, 1
-        mov     rdi, 1
+        call    print
         mov     rsi, e
         mov     rdx, 2
-        syscall
-        mov     rax, 1
-        mov     rdi, 1
+        call    print
         mov     rsi, jfkaws
         mov     rdx, 1
-        syscall
+        call    print
         jmp exit
 subtract:
         mov     r10, r8
